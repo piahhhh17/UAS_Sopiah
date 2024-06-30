@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaksi - Indonesian Tourism</title>
+    <style>
+        /* Reset CSS */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #519eca;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            color: white;
+            font-size: 2.5em;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffeb3b; /* Warna kuning saat hover */
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input, select, button {
+            width: calc(100% - 22px); /* Sesuaikan dengan lebar form */
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #519eca;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #020202; /* Warna hitam saat hover */
+        }
+
+        .success-message {
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .success-message p {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
+
+        .success-message .highlight {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #519eca;
+        }
+
+        .success-message .icon {
+            font-size: 3em;
+            color: #519eca;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #519eca;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Transaksi</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="kebudayaan.html">Kebudayaan</a></li>
+                <li><a href="wisata.html">Tempat Wisata</a></li>
+                <li><a href="hotel.html">Hotel Favorit</a></li>
+                <li><a href="transaksi.html">Transaksi</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form id="transaksiForm">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="paket">Paket Wisata:</label>
+            <select id="paket" name="paket" required>
+                <option value="">Pilih Paket Wisata</option>
+                <option value="paket1">Paket 1</option>
+                <option value="paket2">Paket 2</option>
+                <option value="paket3">Paket 3</option>
+            </select>
+
+            <label for="jumlah">Jumlah Orang:</label>
+            <input type="number" id="jumlah" name="jumlah" required>
+
+            <label for="bank">Transfer Bank:</label>
+            <select id="bank" name="bank" required>
+                <option value="">Pilih Bank</option>
+                <option value="bca">BCA</option>
+                <option value="bni">BNI</option>
+                <option value="bri">BRI</option>
+                <option value="mandiri">Mandiri</option>
+            </select>
+
+            <label for="no_rek">No Rek Tujuan:</label>
+            <input type="text" id="no_rek" name="no_rek" required>
+
+            <label for="jumlah_uang">Total Uang:</label>
+            <input type="number" id="jumlah_uang" name="jumlah_uang" required>
+
+            <button type="submit">Pesan Sekarang</button>
+        </form>
+
+        <!-- Success Message -->
+        <div class="success-message" id="successMessage">
+            <div class="icon">&#10004;</div>
+            <p class="highlight">Transaksi berhasil!</p>
+            <p>Terima kasih atas pemesanan Anda.</p>
+            <p><strong>Detail Pemesanan:</strong></p>
+            <p>Nama: <span id="namaDetail"></span></p>
+            <p>Email: <span id="emailDetail"></span></p>
+            <p>Paket Wisata: <span id="paketDetail"></span></p>
+            <p>Jumlah Orang: <span id="jumlahDetail"></span></p>
+            <p>Bank: <span id="bankDetail"></span></p>
+            <p>No Rek Tujuan: <span id="noRekDetail"></span></p>
+            <p>Jumlah Uang: <span id="jumlahUangDetail"></span></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>Wonderful Indonesia Tourism Fair 2024.</p>
+    </footer>
+
+    <script>
+        document.getElementById('transaksiForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Retrieve form data
+            var formData = {
+                nama: document.getElementById('nama').value,
+                email: document.getElementById('email').value,
+                paket: document.getElementById('paket').value,
+                jumlah: document.getElementById('jumlah').value,
+                bank: document.getElementById('bank').value,
+                no_rek: document.getElementById('no_rek').value,
+                jumlah_uang: document.getElementById('jumlah_uang').value
+            };
+
+            // Basic form validation
+            if (formData.nama.trim() === '' || formData.email.trim() === '' || formData.paket.trim() === '' || formData.jumlah.trim() === '' || formData.bank.trim() === '' || formData.no_rek.trim() === '' || formData.jumlah_uang.trim() === '') {
+                alert('Harap lengkapi semua kolom!');
+                return;
+            }
+
+            // Display booking details
+            document.getElementById('namaDetail').innerText = formData.nama;
+            document.getElementById('emailDetail').innerText = formData.email;
+            document.getElementById('paketDetail').innerText = formData.paket;
+            document.getElementById('jumlahDetail').innerText = formData.jumlah;
+            document.getElementById('bankDetail').innerText = formData.bank;
+            document.getElementById('noRekDetail').innerText = formData.no_rek;
+            document.getElementById('jumlahUangDetail').innerText = formData.jumlah_uang;
+
+            // Simulate processing
+            setTimeout(function() {
+                // Clear form
+                document.getElementById('nama').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('paket').value = '';
+                document.getElementById('jumlah').value = '';
+                document.getElementById('bank').value = '';
+                document.getElementById('no_rek').value = '';
+                document.getElementById('jumlah_uang').value = '';
+
+                // Show success message
+                document.getElementById('successMessage').style.display = 'block';
+
+                // Hide message after 5 seconds
+                setTimeout(function() {
+                    document.getElementById('successMessage').style.display = 'none';
+                }, 5000);
+
+            }, 1000); // Simulate a delay of 1 second (1000 milliseconds)
+        });
+    </script>
+</body>
+</html>

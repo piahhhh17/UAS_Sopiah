@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Favorit di Indonesia - Indonesian Tourism</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset CSS */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif; /* Menggunakan font Poppins */
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #519eca;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            color: white;
+            font-size: 2.5em;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffeb3b; /* Warna kuning saat hover */
+        }
+
+        main {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        section {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px; /* Mengatur lebar maksimum konten */
+        }
+
+        .hotel-section {
+            margin-bottom: 20px;
+        }
+
+        .hotel-section h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .hotel-section p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .hotel-section img {
+            display: block;
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 10px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-out;
+        }
+
+        .hotel-section img:hover {
+            transform: scale(1.75); /* Perbesar gambar saat di-hover */
+        }
+
+        footer {
+            background-color: #519eca;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hotel Favorit di Indonesia</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="kebudayaan.html">Kebudayaan</a></li>
+                <li><a href="wisata.html">Tempat Wisata</a></li>
+                <li><a href="hotel.html">Hotel Favorit</a></li>
+                <li><a href="transaksi.html">Transaksi</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hotel-section">
+            <h2>Hotel Mulia, Jakarta</h2>
+            <p>Hotel Mulia menawarkan fasilitas mewah dengan pemandangan kota Jakarta yang indah. Harga mulai dari Rp 2.000.000 per malam.</p>
+            <p>Alamat: Jalan Asia Afrika, Senayan, Jakarta</p>
+            <img src="1 Hotel Mulia, Jakarta.jpeg" alt="Hotel Mulia">   <img src="2 Hotel Mulia, Jakarta.jpeg" alt="Hotel Mulia">   <img src="3 Hotel Mulia, Jakarta.jpeg" alt="Hotel Mulia">
+        </section>
+
+        <section class="hotel-section">
+            <h2>Ayana Resort and Spa, Bali</h2>
+            <p>Ayana Resort and Spa menawarkan pengalaman menginap yang luar biasa dengan pemandangan pantai yang menakjubkan. Harga mulai dari Rp 4.000.000 per malam.</p>
+            <p>Alamat: Jalan Karang Mas Sejahtera, Jimbaran, Bali</p>
+            <img src="1 Ayana Resort and Spa, Bali.jpeg" alt="Ayana Resort and Spa">   <img src="2 Ayana Resort and Spa, Bali.jpeg" alt="Ayana Resort and Spa">  <img src="3 Ayana Resort and Spa, Bali.jpeg" alt="Ayana Resort and Spa">
+        </section>
+
+        <section class="hotel-section">
+            <h2>Hotel Tugu, Lombok</h2>
+            <p>Hotel Tugu menawarkan pengalaman menginap yang unik dengan sentuhan budaya lokal Lombok. Harga mulai dari Rp 1.500.000 per malam.</p>
+            <p>Alamat: Sire Beach, Lombok</p>
+            <img src="1 Hotel Tugu, Lombok.jpeg" alt="Hotel Tugu">  <img src="2 Hotel Tugu, Lombok.jpeg" alt="Hotel Tugu">  <img src="3 Hotel Tugu, Lombok.jpeg" alt="Hotel Tugu">
+        </section>
+    </main>
+
+    <footer>
+        <p>Wonderful Indonesia Tourism Fair 2024.</p>
+    </footer>
+</body>
+</html>
